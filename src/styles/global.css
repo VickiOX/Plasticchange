@@ -1,0 +1,27 @@
+body {
+  background-color: #002438;
+  --xxlg-size: 3rem;
+  --xlg-size: 1.4rem;
+  --lg-size: 1.4rem;
+  --md-size: 1.25rem;
+  --sm-size: 1.06rem;
+  --border-width: 2px;
+}
+
+h1,
+h2,
+p {
+  color: #fdfdfd;
+}
+
+h3 {
+  color: #ff1054;
+}
+
+footer {
+  color: #54647e;
+}
+
+.burger {
+  color: #b1c0d8;
+}
