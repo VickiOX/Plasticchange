@@ -1,6 +1,55 @@
 ---
+import { Image } from "astro:assets";
+import Logo from "../assets/images/plasticchange_logo.svg";
+import Button from "../components/Button.astro";
 ---
+
 <div>
-<p>Footer</p>
+  <footer class="bg-white p-4">
+    <Image src={Logo} alt="PlasticChange_logo" class="w-32" />
+    <div class="container mx-auto py-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="col-span-1">
+          <ul>
+            <h4 class="mt-5">Kontakt os</h4>
+            <li class="my-1">info@plasticchange.org</li>
+            <li class="my-1">+45 42667246</li>
+            <h4 class="mt-5">Telefontid</h4>
+            <li class="my-1">Hverdage: 10:00 - 15:00</li>
+            <h4 class="mt-5">Website lavet af</h4>
+            <li class="my-1">Ida, Laura og Victoria</li>
+          </ul>
+        </div>
+        <div class="col-span-1">
+          <h3 class="text-lg text-black font-semibold mb-4">
+            Hold dig opdateret med vores nyhedsbrev
+          </h3>
+          <div class="mb-4">
+            <label for="email" class="block"></label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="E-mail adresse*"
+              class="placeholder-black rounded-full bg-white focus:bg-white p-3 focus:ring-0 px-7 border-black focus:border-black w-full active:bg-gray-700 focus:outline-none"
+            />
+          </div>
+          <Button variant="primary" size="large">Tilmeld</Button>
+          <span>© 2024 Plastic Change</span>
+        </div>
+        <div class="col-span-1">
+          <ul>
+            <h4 class="mt-5">Bank</h4>
+            <li class="my-1">MobilPay 304961</li>
+            <li class="my-1">CVR 35778985</li>
+            <li class="my-1">SWIFT FAELDKK1</li>
+            <li class="my-1">IBAN DK3584110002038618</li>
+            <li class="my-1">Konto 8411 0002039618</li>
+            <h4 class="py-2">Privatlivspolitik</h4>
+            <h4>Betalingspolitik</h4>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 </div>
-  

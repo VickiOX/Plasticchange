@@ -8,6 +8,11 @@ body {
   --border-width: 2px;
 }
 
+@font-face {
+  font-family: Roboto-Thin;
+  src: url(Roboto-Thin.ttf);
+}
+
 h1,
 h2,
 p {
@@ -16,6 +21,7 @@ p {
 
 h3 {
   color: #ff1054;
+  font-family: Roboto-Thin;
 }
 
 footer {
