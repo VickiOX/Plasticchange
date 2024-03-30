@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import Iceberg from "../assets/images/iceberg.jpg";
+---
+
+<div
+  class="bg-[#062A3A] p-10 flex flex-col sm:flex-row items-start rounded-xl max-w-screen-md mx-auto"
+>
+  <div class="order-2 sm:order-1">
+    <Image src={Iceberg} alt="Iceberg_analogy" class="w-80" />
+  </div>
+  <div class="flex-1 lg:px-10 py-2 order-1 sm:order-2">
+    <h3 class="mt-0">En voksende trussel mod miljøet</h3>
+    <h4>Plastik i miljøet er et stort problem af flere grunde:</h4>
+    <ul class="p-4 text-white">
+      <li class="list-disc py-2">
+        Plastik nedbrydes ikke effektivt af bakterier og svampe.
+      </li>
+      <li class="list-disc py-2">
+        Forskellige plastiktyper nedbrydes ikke fuldstændigt i naturen.
+      </li>
+      <li class="list-disc py-2">
+        Plastik nedbrydes til mikroplastik, forurener havene og skader
+        dyrelivet.
+      </li>
+      <li class="list-disc py-2">
+        Plastikprodukter indeholder skadelige tilsætningsstoffer.
+      </li>
+      <li class="list-disc py-2">
+        For at beskytte miljøet og dyrelivet er det vigtigt at undgå at smide
+        plastikaffald i havet og naturen.
+      </li>
+    </ul>
+  </div>
+</div>

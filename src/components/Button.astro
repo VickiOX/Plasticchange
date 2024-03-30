@@ -1,19 +1,18 @@
 ---
-
 const { variant = "primary", size = "medium" } = Astro.props;
 
 const buttonStyling = "text-black ";
 
 const variantClasses = {
   primary:
-"bg-[#ff1054] text-white hover:bg-white hover:text-[#ff1054] hover:border-3 px-3 py-2 rounded-full transition duration-100 ease-in-out border border-[#ff1054]",
+    "bg-[#ff1054] text-white hover:bg-white hover:text-[#ff1054] hover:border-3 px-3 py-2 rounded-full transition duration-100 ease-in-out border border-[#ff1054]",
 
   secondary:
-    "bg-white text-yellow-50 hover:text-[#ff1054] hover:bg-yellow-50 px-3 py-2 rounded-full transition duration-100 ease-in-out ",
+    "bg-white text-[#ff1054] hover:bg-[#ff1054] hover:text-white hover:border-3 px-3 py-2 rounded-full transition duration-100 ease-in-out border border-[#ff1054]",
 };
 
 const sizeClasses = {
-  large: "p-6 text-xl",
+  large: "p-6 text-lg",
   medium: "p-6 text-md",
   small: "p-6 text-sm",
 };
