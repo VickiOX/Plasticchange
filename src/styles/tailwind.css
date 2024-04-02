@@ -65,6 +65,56 @@
     font-weight: 700;
     font-style: normal;
     src: url(Roboto-Bold.ttf);
+    font-size: 34px;
+  }
+
+  h2 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    src: url(Roboto-Bold.ttf);
+    font-size: 24px;
+  }
+
+  h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    src: url(Roboto-Bold.ttf);
+    font-size: 20px;
+  }
+
+  h4 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    src: url(Roboto-Boldtalic.ttf);
+    font-size: 20;
+  }
+
+  p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    src: url(Roboto-Light.ttf);
+    font-size: 14px;
+  }
+
+  footer {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    src: url(Roboto-Light.ttf);
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 800px) {
+  h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    src: url(Roboto-Bold.ttf);
     font-size: 64px;
   }
 
@@ -106,55 +156,5 @@
     font-style: normal;
     src: url(Roboto-Light.ttf);
     font-size: 12px;
-  }
-
-  @media (min-width: 800px) {
-    h1 {
-      font-family: "Roboto", sans-serif;
-      font-weight: 700;
-      font-style: normal;
-      src: url(Roboto-Bold.ttf);
-      font-size: 34px;
-    }
-
-    h2 {
-      font-family: "Roboto", sans-serif;
-      font-weight: 700;
-      font-style: normal;
-      src: url(Roboto-Bold.ttf);
-      font-size: 24px;
-    }
-
-    h3 {
-      font-family: "Roboto", sans-serif;
-      font-weight: 700;
-      font-style: normal;
-      src: url(Roboto-Bold.ttf);
-      font-size: 20px;
-    }
-
-    h4 {
-      font-family: "Roboto", sans-serif;
-      font-weight: 700;
-      font-style: normal;
-      src: url(Roboto-Boldtalic.ttf);
-      font-size: 20;
-    }
-
-    p {
-      font-family: "Roboto", sans-serif;
-      font-weight: 300;
-      font-style: normal;
-      src: url(Roboto-Light.ttf);
-      font-size: 14px;
-    }
-
-    footer {
-      font-family: "Roboto", sans-serif;
-      font-weight: 300;
-      font-style: normal;
-      src: url(Roboto-Light.ttf);
-      font-size: 10px;
-    }
   }
 }

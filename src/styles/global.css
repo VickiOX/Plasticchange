@@ -7,24 +7,16 @@ body {
   --border-width: 2px;
 }
 
-@font-face {
-  font-family: Roboto-Thin;
-  src: url(Roboto-Thin.ttf);
-}
-
-* {
-  font-family: Roboto-Thin;
-}
-
 main {
   background-color: #030915;
 }
 
 h1,
-h2, h3, h4,
+h2,
+h3,
+h4,
 p {
   color: #fdfdfd;
-  font-family: Roboto-Thin;
 }
 
 h3 {
@@ -36,9 +28,8 @@ footer {
 }
 
 footer h4 {
-  color: #1E293B;
+  color: #1e293b;
 }
-
 
 .burger {
   color: #b1c0d8;
