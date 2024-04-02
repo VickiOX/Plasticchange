@@ -1,9 +1,19 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Sektion_2 from "../components/Sektion_2.astro";
+import HeroUnit from "../components/HeroUnit.astro";
 ---
 <MainLayout title="Titel">
-	<article>
-		<p>Index indhold</p>
-		<h1 class="text-background">Engangs?</h1>
+	<article class="bg px-6">
+		<div class="bg-[url('/images/herounit.webp')] bg-cover bg-no-repeat mx-auto ">
+			<HeroUnit/>
+		</div>
+		<Sektion_2/>
 	</article>
 </MainLayout>
+
+<style>
+	.bg{
+		background-color: #030915;
+	}
+</style>
