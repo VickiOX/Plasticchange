@@ -1,0 +1,38 @@
+---
+
+---
+
+
+
+
+<section id="horisontalscrollsection" class="h-[300vh] relative top-20 lg:top-60">
+    <ul id="horisontalliste" class="list-none flex sticky top-20 lg:top-60">
+        <li class="flex h-[100vh] w-[100vw] overflow-hidden lg:px-60">
+            <li class="text-[#FF1054] font-[Rubik] text-5xl list-none px-8 lg:text-8xl">322</li>
+            <p class="lg:pr-60 lg:text-lg"> <span class="font-[Rubik] text-[#B1C0D8] text-xl flex pr-40 lg:text-3xl lg:pr-60">millioner tons</span> plastik blev produceret globalt i 2017. Dette tal forventes at firedobles inden 2050</p>
+        </li>
+
+        <li class="flex h-[100vh] w-[100vw] overflow-hidden px-10">
+            <li class="text-[#FF1054] font-[Rubik] text-5xl list-none px-[25px] lg:text-8xl">40</li>
+            <p class="lg:pr-60 lg:text-lg"> <span class="font-[Rubik] text-[#B1C0D8] text-xl flex pr-40 lg:text-3xl lg:pr-60">procent</span> af al plastikproduktion, brugt til engangsformål, ænder ikke med at blive genanvendt, hvilket forværre forureningen af havene</p>
+        </li>
+
+        <li class="flex h-[100vh] w-[100vw] overflow-hidden px-10">
+            <li class="text-[#FF1054] font-[Rubik] text-5xl list-none pr-6 lg:text-8xl">8-10</li>
+            <p class="lg:text-lg"> <span class="font-[Rubik] text-[#B1C0D8] text-xl flex pr-40 lg:text-3xl lg:pr-60">millioner tons</span> plastik ender hvert år i havet globalt, hvilket kan føre til, at der i 2025 er 1 ton plastik for hver 3 tons fisk. </p>
+        </li>
+
+</section>
+
+<script>
+/* Import af Motion One bibliotek */
+import { animate, stagger, inView, scroll, timeline } from "motion";
+
+const items = document.querySelectorAll("#horisontalliste li");
+scroll(
+   animate ("#horisontalliste", {
+     transform: ["none", `translateX(-${items.length - 1}00vw)`]
+   }),
+   { target: document.querySelector("#horisontalscrollsection") }
+ ); 
+</script>
