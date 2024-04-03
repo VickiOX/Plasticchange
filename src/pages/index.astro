@@ -1,16 +1,26 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Sektion_2 from "../components/Sektion_2.astro";
-import HeroUnit from "../components/HeroUnit.astro";
-import Section_4 from "../components/Section_4.astro"
+import Sektion1 from "../components/Sektion_1.astro";
+import Sektion_2 from "../components/Sektion_2.astro"
+import Sektion3 from "../components/Sektion_3.astro";
 ---
 <MainLayout title="Titel">
-	<article class="bg px-6">
-		<div class="bg-[url('/images/herounit.webp')] bg-cover bg-no-repeat mx-auto ">
-			<HeroUnit/>
-		</div>
-		<Sektion_2/>
-		<Section_4/>
+	<article>
+		<p>Index indhold</p>
+		<h1 class="text-background">Engangs?</h1>
+
+		<section>
+			<Sektion1/>
+
+		</section>
+
+		<section>
+			<Sektion_2/>
+		</section>
+
+		<section>
+			<Sektion3/>
+		</section>
 	</article>
 </MainLayout>
 
