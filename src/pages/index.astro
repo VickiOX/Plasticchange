@@ -8,7 +8,8 @@ import Section_4 from "../components/Section_4.astro";
 import Section_5 from "../components/Section_5.astro";
 ---
 <MainLayout title="Titel">
-	<article class="bg px-6">
+	<article class="bg-[#f6f6f6] px-6 md:px-10 lg:px-20">
+		<div class="bg-[#030915]">
 			<div class="bg-[url('/images/hero.webp')] bg-cover bg-no-repeat mx-auto">
 				<HeroUnit/>
 			</div>
@@ -17,13 +18,9 @@ import Section_5 from "../components/Section_5.astro";
 			<Sektion3/>
 			<Section_4/>
 			<Section_5/>
+		</div>
 	</article>
 </MainLayout>
 
-<style>
-	.bg{
-		background-color: #030915;
-	}
-	
-</style>
+
 
