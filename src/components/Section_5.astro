@@ -1,0 +1,49 @@
+---
+import Button from "../components/Button.astro";
+---
+
+<div class="shop py-8 md:flex md:flex-row-reverse md:justify-around">
+
+    <section class="text-center pt-2 pb-10 md:pt-32 lg:pt-40">
+        <h3 class="text-[#f6f6f6] pb-3 lg:pb-6">Støt os med et bidrag – eller besøg vores shop</h3>
+        <Button variant="primary" size="medium">Merchandise</Button>
+    </section>
+
+    <section class="bg-[#f6f6f6] w-[340px] mx-auto md:w-[390px] md:mx-0 lg:w-[440px]">
+        <div class="block">
+            <h3 class="text-[#1E293B] ml-[16px] pt-[26px] lg:ml-[34px] lg:pt-[34px]">Støt os</h3>
+            <div class="mt-4 flex mx-[24px] justify-between lg:mx-[44px] lg:py-2">
+                <div>
+                    <label class="inline-flex items-center hover:text-[#ff1054]">
+                        <input type="radio" class="form-radio text-[#ff1054] focus:ring-[#ff1054] peer-checked/month:text-[#ff1054] hover:border-[#ff1054]" name="radio-colors" value="1" >
+                        <span class="ml-2">Månedlig</span>
+                    </label>
+                </div>
+                <div>
+                    <label class="inline-flex items-center hover:text-[#ff1054]">
+                        <input type="radio" class="form-radio text-[#ff1054] focus:ring-[#ff1054] peer-checked/month:text-[#ff1054] hover:border-[#ff1054]" name="radio-colors" value="1" >
+                        <span class="ml-2">Engangs</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="flex mx-[16px] justify-between my-6 lg:mx-[34px] lg:py-3">
+            <!-- lav ny buttons -->
+            <Button variant="rounded2" size="large">50</Button>
+            <Button variant="rounded2" size="large">75</Button>
+            <Button variant="rounded" size="large">125</Button>
+
+        </div>
+     
+            <div class="text-center pb-[26px] lg:pb-[34px]">
+                <label class="">
+                    <input type="number" class="form-input mt-6 mx-[28px] md:mx-auto w-[280px] md:w-[290px] block rounded-full lg:w-[370px] lg:mb-2 lg:mt-8" placeholder="Andet beløb">
+                </label>
+                <div class="mx-auto block pt-4">
+                <Button variant="støtOs" size="large">Støt vores arbejde</Button>
+                </div>
+            </div>
+        
+    
+    </section>
+       
