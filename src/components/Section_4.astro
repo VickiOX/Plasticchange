@@ -1,0 +1,92 @@
+---
+---
+<h3 class="text-center">8 gode råd</h3>
+<!--indsæt DR animation af billeder her for udstyr -->
+<article class="sticky">
+    <div class="sticky top-1/4 mangeelementerinview grid grid-cols-2 md:grid-cols-4 text-center">
+
+      <div class="p-3 m-1 rounded-xl box mangeelementer1 md:p-3 md:m-2 lg:p-6 lg:m-4">
+        <img class="w-[65px] h-[65px] rounded-full mx-auto lg:w-[94px] lg:h-[94px] " src="/images/plastic-bag.webp" alt="foto">
+        <h4 class="pt-3">Dit indkøb</h4>
+        <p>Tag muleposer med og sig nej tak til plastikposer</p>
+      </div>
+
+      <div class="p-3 m-1  rounded-xl box mangeelementer2 md:p-3 md:m-2 lg:p-6 lg:m-4">
+        <img class="w-[65px] h-[65px] rounded-full mx-auto lg:w-[94px] lg:h-[94px] " src="/images/drikkedunk.webp" alt="foto">
+        <h4 class="pt-3">Din vandflaske</h4>
+        <p>Brug din drikkedunk og undgå købevand</p>
+      </div>
+
+      <div class="p-3 m-1  rounded-xl box mangeelementer3 md:p-3 md:m-2 lg:p-6 lg:m-4">
+        <img class="w-[65px] h-[65px] rounded-full mx-auto lg:w-[94px] lg:h-[94px] " src="/images/milk.webp" alt="foto">
+        <h4 class="pt-3">Din mælk</h4>
+        <p>Køb mælk uden skruelåg</p>
+      </div>
+
+      <div class="p-3 m-1  rounded-xl box mangeelementer4 md:p-3 md:m-2 lg:p-6 lg:m-4">
+        <img class="w-[65px] h-[65px] rounded-full mx-auto lg:w-[94px] lg:h-[94px] " src="/images/service.webp" alt="foto">
+        <h4 class="pt-3">Din fest</h4>
+        <p>Stop engangsservice, balloner og sugerør</p>
+      </div>
+
+      <div class="p-3 m-1  rounded-xl box mangeelementer5 md:p-3 md:m-2 lg:p-6 lg:m-4">
+        <img class="w-[65px] h-[65px] rounded-full mx-auto lg:w-[94px] lg:h-[94px] " src="/images/vaskemaskine.webp" alt="foto">
+        <h4 class="pt-3">Din tøjvask</h4>
+        <p>Fyld maskinen, så du slider mindre på tøjet</p>
+      </div>
+
+      <div class="p-3 m-1  rounded-xl box mangeelementer6 md:p-3 md:m-2 lg:p-6 lg:m-4">
+        <img class="w-[65px] h-[65px] rounded-full mx-auto lg:w-[94px] lg:h-[94px] " src="/images/trash.webp" alt="foto">
+        <h4 class="pt-3">Dit affald</h4>
+        <p>Tjek emballagen for sorteringsinfo</p>
+      </div>
+
+      <div class=" p-3 m-1 rounded-xl box mangeelementer7 md:p-3 md:m-2 lg:p-6 lg:m-4">
+        <img class="w-[65px] h-[65px] rounded-full mx-auto lg:w-[94px] lg:h-[94px] " src="/images/care.webp" alt="foto">
+        <h4 class="pt-3">Dine plejeprodukter</h4>
+        <p>Køb i store beholdere frem for mange små</p>
+      </div>
+
+      <div class="p-3 m-1  rounded-xl box mangeelementer8 md:p-3 md:m-2 lg:p-6 lg:m-4">
+        <img class="w-[65px] h-[65px] rounded-full mx-auto lg:w-[94px] lg:h-[94px] " src="/images/toilet.webp" alt="foto">
+        <h4 class="pt-3">Dit toiletbesøg</h4>
+        <p>Kun tre ting i toilettet – tis, lort og papir</p>
+      </div>
+    </div>
+    <div class="sticky top-0 h-screen">
+    </div>
+  </article>
+
+  <style>
+    .box{
+        background-color: #062A3A;
+    }
+  </style>
+
+  <script>
+    //import motion one biblotek
+	import { animate, stagger, inView, scroll, timeline } from "motion";
+
+
+//DR animation
+inView( ".mangeelementerinview", () =>{
+animate( ".mangeelementer1", { x: [-2000, 0 ] }, { duration: 2 }) 
+animate( ".mangeelementer2", { x: [-1500, 0 ] }, { duration: 2 })
+animate( ".mangeelementer3", { x: [-1000, 0 ] }, { duration: 2 })
+animate( ".mangeelementer4", { x: [-500, 0 ] }, { duration: 2 })
+animate( ".mangeelementer5", { x: [-1000, 0 ] }, { duration: 2 })
+animate( ".mangeelementer6", { x: [2000, 0 ] }, { duration: 2 })
+animate( ".mangeelementer7", { x: [1500, 0 ] }, { duration: 2 })
+animate( ".mangeelementer8", { x: [1000, 0 ] }, { duration: 2 })
+return () => {
+  animate( ".mangeelementer1", { x: [-2000, 0 ] }, { duration: 2 }) 
+  animate( ".mangeelementer2", { x: [-1500, 0 ] }, { duration: 2 })
+  animate( ".mangeelementer3", { x: [-1000, 0 ] }, { duration: 2 })
+  animate( ".mangeelementer4", { x: [-500, 0 ] }, { duration: 2 })
+  animate( ".mangeelementer5", { x: [-1000, 0 ] }, { duration: 2 })
+  animate( ".mangeelementer6", { x: [2000, 0 ] }, { duration: 2 })
+  animate( ".mangeelementer7", { x: [1500, 0 ] }, { duration: 2 })
+  animate( ".mangeelementer8", { x: [1000, 0 ] }, { duration: 2 })
+}
+})
+  </script>
