@@ -94,7 +94,7 @@
 
   h4 {
     font-family: "Roboto", sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     font-style: normal;
     src: url(Roboto-Boldtalic.ttf);
     font-size: 20;
@@ -107,6 +107,15 @@
     src: url(Roboto-Light.ttf);
     font-size: 14px;
   }
+
+  li {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    src: url(Roboto-Light.ttf);
+    font-size: 14px;
+  }
+
 
   footer {
     font-family: "Roboto", sans-serif;
