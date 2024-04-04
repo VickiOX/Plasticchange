@@ -1,0 +1,115 @@
+---
+import Button from "../components/Button.astro";
+import { Image } from "astro:assets";
+import Arrow from "../assets/images/arrow.svg";
+---
+
+
+<div x-data="{ showmenu: false }">
+  <div id="navbar" class="flex flex-row justify-between">
+    <nav id="desktopmenu" class="hidden lg:block">
+      <ul class="flex flex-row gap-6 lg:pr-26 lg:pt-4 lg:text-md">
+        <li
+          class="text-[#1E293B] hover:text-[#203321] hover:underline decoration-solid"
+        >
+          <a href="#">Generelt</a>
+        </li>
+        <li
+          class="text-[#1E293B] hover:text-[#203321] hover:underline decoration-solid"
+        >
+          <a href="#">Vores arbejde</a>
+        </li>
+        <li
+          class="text-[#1E293B] hover:text-[#203321] hover:underline decoration-solid"
+        >
+          <a href="#">Hvad kan du gøre?</a>
+        </li>
+        <li
+          class="text-[#1E293B] hover:text-[#203321] hover:underline decoration-solid"
+        >
+          <a href="#">Videnscenter</a>
+        </li>
+        <li
+          class="text-[#1E293B] hover:text-[#203321] hover:underline decoration-solid"
+        >
+          <a href="https://www.hjemhavn.dk/collections/plastic-change-merchandise">Merchandise</a>
+        </li>
+        <a href="#">
+            <Button variant="primary" size="medium">Bliv medlem</Button>
+            <Button variant="secondary" size="medium">Støt os</Button>
+      </ul>
+    </nav>
+
+    <button id="burgermenu" class="lg:hidden text-[#1E293] p-10 absolute top-4 right-4" x-on:click="showmenu = !showmenu">
+        <span class="block w-8 h-0.5 bg-white mb-2 transition-transform" :class="{ 'transform -rotate-45 translate-y-2.5': showmenu }"></span>
+        <span class="block w-8 h-0.5 bg-white mb-2 transition-transform" :class="{ 'opacity-0': showmenu }"></span>
+        <span class="block w-8 h-0.5 bg-white mb-2 transition-transform" :class="{ 'transform rotate-45 -translate-y-2.5': showmenu }"></span>
+      </button>
+</div>
+
+
+  <nav
+    id="mobilmenu"
+    class="flex flex-col pt-5"
+    x-show="showmenu"
+    x-transition
+    x-on:click="showmenu = false"
+    x-on:click.outside="showmenu = false"
+  >
+    <ul>
+        <a href="#">
+            <div class="flex justify-start pr-20 py-2 gap-2">
+                <Button variant="tertiary" size="medium">Bliv medlem</Button>
+                <Button variant="primary" size="medium">Støt os</Button>  
+            </div>
+        </a>
+        
+        <div x-data="{ showSubmenu: false }">
+            <li class="text-white pl-3 py-4 hover:underline decoration-solid relative">
+                <ul class="flex items-center cursor-pointer" x-on:click="showSubmenu = !showSubmenu">
+                    Generelt 
+                    <Image src={Arrow} alt="Arrow" class="ml-1 w-2" />          
+                </ul>       
+                <ul x-show="showSubmenu" class="relative">
+                    <li class="uppercase text-[#54647E]">Om Plastic Change</li>
+                    <li class="uppercase text-[#54647E]">Partnere og praktisk</li>
+                    <li class="uppercase text-[#54647E]">Andet</li>
+                </ul>
+            </li>
+        </div>
+        
+        
+        <li
+            class="text-white pl-3 py-4 hover:underline decoration-solid flex items-center">
+            <a href="#" class="flex items-center">
+            Vores arbejde 
+            <Image src={Arrow} alt="Arrow" class="ml-1 w-2" />          
+            </a>
+        </li>
+
+        <li
+            class="text-white pl-3 py-4 hover:underline decoration-solid flex items-center">
+            <a href="#" class="flex items-center">
+            Hvad kan du gøre? 
+            <Image src={Arrow} alt="Arrow" class="ml-1 w-2" />          
+            </a>
+        </li>
+     
+        <li
+            class="text-white pl-3 py-4 hover:underline decoration-solid flex items-center">
+            <a href="#" class="flex items-center">
+            Videnscenter 
+            <Image src={Arrow} alt="Arrow" class="ml-1 w-2" />          
+            </a>
+        </li>
+     
+        <li
+            class="text-white pl-3 py-4 hover:underline decoration-solid flex items-center">
+            <a href="https://www.hjemhavn.dk/collections/plastic-change-merchandise" class="flex items-center">
+            Merchandise
+            <Image src={Arrow} alt="Arrow" class="ml-1 w-2" />          
+            </a>
+        </li>
+    </ul>
+  </nav>
+</div>

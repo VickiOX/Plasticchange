@@ -1,24 +1,14 @@
 ---
 import { Image } from "astro:assets";
 import Logo from "../assets/images/plasticchange_logo.svg";
-import Button from "../components/Button.astro";
+import Navbar from "../components/Navbar.astro";
 ---
 
-<div>
-  <header class="bg-white p-4">
-    <a href="#">
-      <Image src={Logo} alt="PlasticChange_logo" class="w-50" />
-    </a>
-    <nav>
-      <ul>
-        <li>Generelt</li>
-        <li>Vores arbejde</li>
-        <li>Hvad kan du gøre?</li>
-        <li>Videnscenter</li>
-        <li>Merchandise</li>
-      </ul>
-      <Button variant="primary" size="medium">Bliv medlem</Button>
-      <Button variant="secondary" size="medium">Støt os</Button>
-    </nav>
-  </header>
+<div
+  class="p-6 z-30 lg:bg-white bg-[#062A3A] py-10 lg:pr-12 lg:p-4 fixed w-full overflow-hidden"
+>
+  <a href="#">
+    <Image src={Logo} alt="PlasticChange_logo" class="w-50" />
+  </a>
+  <Navbar />
 </div>
