@@ -7,7 +7,7 @@ import Button from "../components/Button.astro";
 <div>
   <footer class="bg-[#f6f6f6] p-6 md:px-10 lg:px-20">
     <a href="#">
-      <Image src={Logo} alt="PlasticChange_logo" class="w-32" />
+      <Image src={Logo} alt="PlasticChange_logo" class="w-40" />
     </a>
     <div class="container mx-auto py-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -22,6 +22,7 @@ import Button from "../components/Button.astro";
             <li class="my-1">Ida, Laura og Victoria</li>
           </ul>
         </div>
+
         <div class="col-span-1">
           <h3 class="text-lg text-black font-semibold mb-4">
             Hold dig opdateret med vores nyhedsbrev
@@ -35,11 +36,12 @@ import Button from "../components/Button.astro";
               placeholder="E-mail adresse*"
               class="placeholder-black rounded-full bg-white focus:bg-white p-3 focus:ring-0 px-7 border-black focus:border-black w-full active:bg-gray-700 focus:outline-none"
             />
-            <div class="py-4">
+            <div class="py-3 pt-7">
               <Button variant="primary" size="large">Tilmeld</Button>
             </div>
           </div>
-          <span>© 2024 Plastic Change</span>
+
+          <span class="hidden lg:inline">© 2024 Plastic Change</span>
         </div>
         <div class="col-span-1 md:pl-28 lg:pl-40">
           <ul>
@@ -55,5 +57,7 @@ import Button from "../components/Button.astro";
         </div>
       </div>
     </div>
+
+    <span class="inline lg:hidden">© 2024 Plastic Change</span>
   </footer>
 </div>
