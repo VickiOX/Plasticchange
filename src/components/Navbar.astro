@@ -5,42 +5,46 @@ import ArrowUp from "../assets/images/arrow-down.svg";
 import ArrowDown from "../assets/images/arrow-up.svg";
 ---
 
+<!-- DESKTOP MENU -->
 <div x-data="{ showmenu: false, showSubmenu: false }">
   <div id="navbar" class="flex flex-row justify-between">
     <nav id="desktopmenu" class="hidden lg:block">
-      <ul class="flex flex-row gap-6 lg:pr-26 lg:pt-4 lg:text-md">
+      <ul class="flex flex-row gap-10 ml-8">
         <li
-          class="text-[#1E293B] hover:text-[#203321] hover:underline decoration-solid"
+          class="text-[#1E293B] lg:pt-3 hover:text-[#ff1054] hover:underline decoration-solid"
         >
           <a href="#">Generelt</a>
         </li>
         <li
-          class="text-[#1E293B] hover:text-[#203321] hover:underline decoration-solid"
+          class="text-[#1E293B] lg:pt-3 hover:text-[#ff1054] hover:underline decoration-solid"
         >
           <a href="#">Vores arbejde</a>
         </li>
         <li
-          class="text-[#1E293B] hover:text-[#203321] hover:underline decoration-solid"
+          class="text-[#1E293B] lg:pt-3 hover:text-[#ff1054] hover:underline decoration-solid"
         >
           <a href="#">Hvad kan du gøre?</a>
         </li>
         <li
-          class="text-[#1E293B] hover:text-[#203321] hover:underline decoration-solid"
+          class="text-[#1E293B] lg:pt-3 hover:text-[#ff1054] hover:underline decoration-solid"
         >
           <a href="#">Videnscenter</a>
         </li>
         <li
-          class="text-[#1E293B] hover:text-[#203321] hover:underline decoration-solid"
+          class="text-[#1E293B] lg:pt-3 hover:text-[#ff1054] hover:underline decoration-solid"
         >
           <a
             href="https://www.hjemhavn.dk/collections/plastic-change-merchandise"
             >Merchandise</a
           >
         </li>
-        <a href="#">
-          <Button variant="primary" size="medium">Bliv medlem</Button>
-          <Button variant="secondary" size="medium">Støt os</Button>
-        </a>
+
+        <div class="pl-60">
+          <a href="#">
+            <Button variant="quaternary" size="medium">Bliv medlem</Button>
+            <Button variant="secondary" size="medium">Støt os</Button>
+          </a>
+        </div>
       </ul>
     </nav>
 
@@ -70,14 +74,21 @@ import ArrowDown from "../assets/images/arrow-up.svg";
         </div>
       </a>
 
-      <div x-data="{ showSubmenu: false }">
+      <!-- MENU -->
+      <div x-data="{ showSubmenu: false, rotation: 0 }">
         <li class="text-white pl-8 py-4 decoration-solid relative">
           <ul
             class="flex items-center cursor-pointer hover:underline"
-            x-on:click="showSubmenu = !showSubmenu; toggleImage(); $event.stopPropagation()"
+            x-on:click="showSubmenu = !showSubmenu; rotate()"
           >
             Generelt
-            <Image src={ArrowUp} alt="ArrowUp" class="ml-1 w-2" />
+            <Image
+              src={ArrowUp}
+              alt="ArrowUp"
+              class="ml-1 w-2 img"
+              :style="'transform: rotate(' + rotation + 'deg)'"
+              x-on:click="rotateAnimated"
+            />
           </ul>
 
           <ul x-show="showSubmenu" class="relative py-3">
@@ -115,7 +126,7 @@ import ArrowDown from "../assets/images/arrow-up.svg";
             x-on:click="showSubmenu = !showSubmenu; toggleImage(); $event.stopPropagation()"
           >
             Vores arbejde
-            <Image src={ArrowUp} alt="ArrowUp" class="ml-1 w-2" />
+            <Image src={ArrowUp} alt="ArrowUp" class="ml-1 w-2 img" />
           </ul>
 
           <ul x-show="showSubmenu" class="relative py-3">
@@ -170,7 +181,7 @@ import ArrowDown from "../assets/images/arrow-up.svg";
             x-on:click="showSubmenu = !showSubmenu; toggleImage(); $event.stopPropagation()"
           >
             Hvad kan du gøre?
-            <Image src={ArrowUp} alt="ArrowUp" class="ml-1 w-2" />
+            <Image src={ArrowUp} alt="ArrowUp" class="ml-1 w-2 img" />
           </ul>
 
           <ul x-show="showSubmenu" class="relative py-3">
@@ -216,7 +227,7 @@ import ArrowDown from "../assets/images/arrow-up.svg";
             x-on:click="showSubmenu = !showSubmenu; toggleImage(); $event.stopPropagation()"
           >
             Videnscenter
-            <Image src={ArrowUp} alt="ArrowUp" class="ml-1 w-2" />
+            <Image src={ArrowUp} alt="ArrowUp" class="ml-1 w-2 img" />
           </ul>
 
           <ul x-show="showSubmenu" class="relative py-3">
@@ -232,15 +243,16 @@ import ArrowDown from "../assets/images/arrow-up.svg";
             >
               Overblik
             </li>
-            <li class="cursor-pointer hover:underline pb-5">Udvalgte rapporter</li>
+            <li class="cursor-pointer hover:underline pb-5">
+              Udvalgte rapporter
+            </li>
 
             <li
-            class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
-          >
-            Få svar
-          </li>
-          <li class="cursor-pointer hover:underline pb-5">FAQ</li>
-
+              class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
+            >
+              Få svar
+            </li>
+            <li class="cursor-pointer hover:underline pb-5">FAQ</li>
           </ul>
         </li>
       </div>
