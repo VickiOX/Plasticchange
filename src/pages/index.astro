@@ -1,26 +1,24 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Sektion1 from "../components/Sektion_1.astro";
-import Sektion_2 from "../components/Sektion_2.astro"
+import Sektion_2 from "../components/Sektion_2.astro";
 import Sektion_3 from "../components/Sektion_3.astro";
 import HeroUnit from "../components/HeroUnit.astro";
 import Section_4 from "../components/Section_4.astro";
 import Section_5 from "../components/Section_5.astro";
 ---
-<MainLayout title="Titel">
-	<article class="bg-[#f6f6f6] px-6 md:px-10 lg:px-20">
-		<div class="bg-[#030915]">
-			<div class="bg-[url('/images/hero.webp')] bg-cover bg-no-repeat mx-auto">
-				<HeroUnit/>
-			</div>
-			<Sektion1/>
-			<Sektion_2/>
-			<Sektion_3/>
-			<Section_4/>
-			<Section_5/>
-		</div>
-	</article>
+
+<MainLayout title="#SingleUseSucks | Plastic Change">
+  <article class="bg-[#f6f6f6] px-6 md:px-10 lg:px-20">
+    <div class="bg-[#030915]">
+      <div class="bg-[url('/images/hero.webp')] bg-cover bg-no-repeat mx-auto">
+        <HeroUnit />
+      </div>
+      <Sektion1 />
+      <Sektion_2 />
+      <Sektion_3 />
+      <Section_4 />
+      <Section_5 />
+    </div>
+  </article>
 </MainLayout>
-
-
-
