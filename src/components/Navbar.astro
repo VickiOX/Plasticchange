@@ -9,19 +9,19 @@ import ArrowDown from "../assets/images/arrow-up.svg";
 <div x-data="{ showmenu: false, showSubmenu: false }">
   <div id="navbar" class="flex flex-row justify-between">
     <nav id="desktopmenu" class="hidden lg:block">
-      <ul class="flex justify-center pl-10 gap-10 ml-8 justify-items-center">
+      <ul class="flex justify-center pl-10 gap-16 ml-8 justify-items-center">
         <li
           class="text-[#1E293B] lg:pt-3 hover:text-[#ff1054] hover:underline decoration-solid mt-5"
         >
           <a href="#">Generelt</a>
         </li>
         <li
-          class="text-[#1E293B] lg:pt-3 hover:text-[#ff1054] hover:underline decoration-solid w-[160px] mt-5"
+          class="text-[#1E293B] lg:pt-3 hover:text-[#ff1054] hover:underline decoration-solid mt-5"
         >
           <a href="#">Vores arbejde</a>
         </li>
         <li
-          class="text-[#1E293B] lg:pt-3 hover:text-[#ff1054] hover:underline decoration-solid w-[180px] mt-5"
+          class="text-[#1E293B] lg:pt-3 hover:text-[#ff1054] hover:underline decoration-solid mt-5"
         >
           <a href="#">Hvad kan du gøre?</a>
         </li>
@@ -39,238 +39,278 @@ import ArrowDown from "../assets/images/arrow-up.svg";
           >
         </li>
 
-        <div class="pl-60">
+        <div class="pt-5 pl-24">
           <a href="#">
-            <Button variant="quaternary" size="medium">Bliv medlem</Button>
-            <Button variant="secondary" size="medium">Støt os</Button>
+            <div class="flex justify-start gap-2">
+              <Button variant="quaternary" size="medium">Bliv medlem</Button>
+              <Button variant="secondary" size="medium">Støt os</Button>
+            </div>
           </a>
         </div>
       </ul>
+
+      <!-- BURGERMENU -->
+      <button
+        id="burgermenu"
+        class="lg:hidden text-[#1E293] p-10 absolute top-4 right-4"
+        x-on:click="showmenu = !showmenu"
+      >
+        <span
+          class="block w-8 h-0.5 bg-[#f6f6f6] mb-2 transition-transform"
+          :class="{ 'transform -rotate-45 translate-y-2.5': showmenu }"></span>
+        <span
+          class="block w-8 h-0.5 bg-[#f6f6f6] mb-2 transition-transform"
+          :class="{ 'opacity-0': showmenu }"></span>
+        <span
+          class="block w-8 h-0.5 bg-[#f6f6f6] mb-2 transition-transform"
+          :class="{ 'transform rotate-45 -translate-y-2.5': showmenu }"></span>
+      </button>
     </nav>
 
-    <!-- BURGERMENU -->
-    <button
-      id="burgermenu"
-      class="lg:hidden text-[#1E293] p-10 absolute top-4 right-4"
-      x-on:click="showmenu = !showmenu"
+    <nav
+      id="mobilmenu"
+      class="flex flex-col pt-5"
+      x-show="showmenu"
+      x-transition
     >
-      <span
-        class="block w-8 h-0.5 bg-[#f6f6f6] mb-2 transition-transform"
-        :class="{ 'transform -rotate-45 translate-y-2.5': showmenu }"></span>
-      <span
-        class="block w-8 h-0.5 bg-[#f6f6f6] mb-2 transition-transform"
-        :class="{ 'opacity-0': showmenu }"></span>
-      <span
-        class="block w-8 h-0.5 bg-[#f6f6f6] mb-2 transition-transform"
-        :class="{ 'transform rotate-45 -translate-y-2.5': showmenu }"></span>
-    </button>
-  </div>
-
-  <nav id="mobilmenu" class="flex flex-col pt-5" x-show="showmenu" x-transition>
-    <ul x-on:click.outside="showmenu = false">
-      <a href="#">
-        <div class="flex justify-start pr-20 py-10 gap-4">
-          <Button variant="tertiary" size="medium">Bliv medlem</Button>
-          <Button variant="primary" size="medium">Støt os</Button>
-        </div>
-      </a>
-
-      <div x-data="{ showSubmenu: false, rotation: 0 }">
-        <li class="text-white pl-8 py-4 decoration-solid relative">
-      <!-- MENU -->
-      <div x-data="{ showSubmenu: false }">
-        <li class="text-[#f6f6f6] pl-8 py-4 decoration-solid relative">
-          <ul
-            class="flex items-center cursor-pointer hover:underline"
-            x-on:click="showSubmenu = !showSubmenu; toggleImage(); $event.stopPropagation()"
-          >
-            Generelt
-            <Image
-              src={ArrowDown}
-              alt="ArrowDown"
-              class="ml-1 w-2"
-              id="img1"
-            />
-          </ul>
-
-          <ul x-show="showSubmenu" class="relative py-3">
-            <li
-              class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
-            >
-              Om Plastic Change
-            </li>
-            <li class="cursor-pointer hover:underline">Hvad vil vi?</li>
-            <li class="cursor-pointer hover:underline">Medarbejdere</li>
-            <li class="cursor-pointer hover:underline pb-5">Bestyrelse</li>
-            <li
-              class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
-            >
-              Partnere og praktisk
-            </li>
-            <li class="cursor-pointer hover:underline">Partnere</li>
-            <li class="cursor-pointer hover:underline pb-5">Vedtægter</li>
-            <li
-              class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
-            >
-              Andet
-            </li>
-            <li class="cursor-pointer hover:underline">Ledige stillinger</li>
-            <li class="cursor-pointer hover:underline">Presse</li>
-            <li class="cursor-pointer hover:underline">Kontakt os</li>
-          </ul>
-        </li>
-      </div>
-
-      <div x-data="{ showSubmenu: false }">
-        <li class="text-white pl-8 py-4 decoration-solid relative">
-          <ul
-            class="flex items-center cursor-pointer hover:underline"
-            id="myButton"
-            x-on:click="showSubmenu = !showSubmenu; toggleImage(); $event.stopPropagation()"
-          >
-            Vores arbejde
-            <Image  id="myImg" src={ArrowUp} alt="ArrowUp" class="ml-1 w-2 img" />
-          </ul>
-       
-          <ul x-show="showSubmenu" class="relative py-3">
-            <li
-              class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
-            >
-              Oversigt
-            </li>
-            <li class="cursor-pointer hover:underline">
-              Mod et affaldsfrit samfund
-            </li>
-            <li class="cursor-pointer hover:underline">
-              Plastic Changer bevægelsen
-            </li>
-            <li class="cursor-pointer hover:underline">Politisk arbejde</li>
-            <li class="cursor-pointer hover:underline pb-5">
-              Internationalt arbejde
-            </li>
-            <li
-              class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
-            >
-              Initiativer
-            </li>
-            <li class="cursor-pointer hover:underline">Kommuner og regioner</li>
-            <li class="cursor-pointer hover:underline">Virksomheder</li>
-            <li class="cursor-pointer hover:underline">Undervisning</li>
-            <li class="cursor-pointer hover:underline pb-5">
-              Projekt Plastfrit Hav
-            </li>
-
-            <li
-              class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
-            >
-              Kampagne
-            </li>
-            <li class="cursor-pointer hover:underline">
-              Global plastiktraktat nu
-            </li>
-            <li class="cursor-pointer hover:underline">Plastaffald ud af EU</li>
-            <li class="cursor-pointer hover:underline">Producent Tjek 2024</li>
-            <li class="cursor-pointer hover:underline">#SingleUseSucks</li>
-            <li class="cursor-pointer hover:underline">Mission Mikroplast</li>
-            <li class="cursor-pointer hover:underline">Plastic People</li>
-          </ul>
-        </li>
-      </div>
-
-      <div x-data="{ showSubmenu: false }">
-        <li class="text-white pl-8 py-4 decoration-solid relative">
-          <ul
-            class="flex items-center cursor-pointer hover:underline"
-            x-on:click="showSubmenu = !showSubmenu; toggleImage(); $event.stopPropagation()"
-          >
-            Hvad kan du gøre?
-            <Image src={ArrowUp} alt="ArrowUp" class="ml-1 w-2 img" />
-          </ul>
-
-          <ul x-show="showSubmenu" class="relative py-3">
-            <li
-              class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
-            >
-              Vær med i bevægelsen
-            </li>
-            <li class="cursor-pointer hover:underline">Støt nu</li>
-            <li class="cursor-pointer hover:underline">Bliv medlem</li>
-            <li class="cursor-pointer hover:underline">World Cleanup Day</li>
-            <li class="cursor-pointer hover:underline">Arv og testamente</li>
-            <li class="cursor-pointer hover:underline pb-5">
-              Er du en Plastic Changer?
-            </li>
-
-            <li
-              class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
-            >
-              For virksomheder
-            </li>
-            <li class="cursor-pointer hover:underline">Workshops</li>
-            <li class="cursor-pointer hover:underline">Støt som virksomhed</li>
-            <li class="cursor-pointer hover:underline">Innovationspartner</li>
-            <li class="cursor-pointer hover:underline pb-5">Foredrag</li>
-
-            <li
-              class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
-            >
-              Hold dig opdateret
-            </li>
-            <li class="cursor-pointer hover:underline">Nyhedsbrev</li>
-            <li class="cursor-pointer hover:underline">Gode råd</li>
-            <li class="cursor-pointer hover:underline">Events</li>
-          </ul>
-        </li>
-      </div>
-
-      <div x-data="{ showSubmenu: false }">
-        <li class="text-[#f6f6f6] pl-8 py-4 decoration-solid relative">
-          <ul
-            class="flex items-center cursor-pointer hover:underline"
-            x-on:click="showSubmenu = !showSubmenu; toggleImage(); $event.stopPropagation()"
-          >
-            Videnscenter
-            <Image src={ArrowUp} alt="ArrowUp" class="ml-1 w-2 img" />
-          </ul>
-
-          <ul x-show="showSubmenu" class="relative py-3">
-            <li
-              class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
-            >
-              Få mere viden
-            </li>
-            <li class="cursor-pointer hover:underline pb-5">Videnscenter</li>
-
-            <li
-              class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
-            >
-              Overblik
-            </li>
-            <li class="cursor-pointer hover:underline pb-5">
-              Udvalgte rapporter
-            </li>
-
-            <li
-              class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
-            >
-              Få svar
-            </li>
-            <li class="cursor-pointer hover:underline pb-5">FAQ</li>
-          </ul>
-        </li>
-      </div>
-
-      <li
-        class="text-[#f6f6f6] pl-8 py-4 mb-80 hover:underline decoration-solid flex items-center"
-      >
-        <a
-          href="https://www.hjemhavn.dk/collections/plastic-change-merchandise"
-          class="flex items-center"
-        >
-          Merchandise
+      <ul x-on:click.outside="showmenu = false">
+        <a href="#">
+          <div class="flex justify-start pr-20 py-10 gap-4">
+            <Button variant="tertiary" size="medium">Bliv medlem</Button>
+            <Button variant="primary" size="medium">Støt os</Button>
+          </div>
         </a>
-      </li>
-      <span class="text-[#f6f6f6] text-xs">© 2024 Plastic Change</span>
-    </ul>
-  </nav>
+
+        <div x-data="{ showSubmenu: false, rotation: 0 }">
+          <li class="text-white pl-8 py-4 decoration-solid relative">
+            <!-- MENU -->
+            <div x-data="{ showSubmenu: false }">
+              <li class="text-[#f6f6f6] pl-8 py-4 decoration-solid relative">
+                <ul
+                  class="flex items-center cursor-pointer hover:underline"
+                  x-on:click="showSubmenu = !showSubmenu; toggleImage(); $event.stopPropagation()"
+                >
+                  Generelt
+                  <Image
+                    src={ArrowDown}
+                    alt="ArrowDown"
+                    class="ml-1 w-2"
+                    id="img1"
+                  />
+                </ul>
+
+                <ul x-show="showSubmenu" class="relative py-3">
+                  <li
+                    class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
+                  >
+                    Om Plastic Change
+                  </li>
+                  <li class="cursor-pointer hover:underline">Hvad vil vi?</li>
+                  <li class="cursor-pointer hover:underline">Medarbejdere</li>
+                  <li class="cursor-pointer hover:underline pb-5">
+                    Bestyrelse
+                  </li>
+                  <li
+                    class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
+                  >
+                    Partnere og praktisk
+                  </li>
+                  <li class="cursor-pointer hover:underline">Partnere</li>
+                  <li class="cursor-pointer hover:underline pb-5">Vedtægter</li>
+                  <li
+                    class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
+                  >
+                    Andet
+                  </li>
+                  <li class="cursor-pointer hover:underline">
+                    Ledige stillinger
+                  </li>
+                  <li class="cursor-pointer hover:underline">Presse</li>
+                  <li class="cursor-pointer hover:underline">Kontakt os</li>
+                </ul>
+              </li>
+            </div>
+
+            <div x-data="{ showSubmenu: false }">
+              <li class="text-white pl-8 py-4 decoration-solid relative">
+                <ul
+                  class="flex items-center cursor-pointer hover:underline"
+                  id="myButton"
+                  x-on:click="showSubmenu = !showSubmenu; toggleImage(); $event.stopPropagation()"
+                >
+                  Vores arbejde
+                  <Image
+                    id="myImg"
+                    src={ArrowUp}
+                    alt="ArrowUp"
+                    class="ml-1 w-2 img"
+                  />
+                </ul>
+
+                <ul x-show="showSubmenu" class="relative py-3">
+                  <li
+                    class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
+                  >
+                    Oversigt
+                  </li>
+                  <li class="cursor-pointer hover:underline">
+                    Mod et affaldsfrit samfund
+                  </li>
+                  <li class="cursor-pointer hover:underline">
+                    Plastic Changer bevægelsen
+                  </li>
+                  <li class="cursor-pointer hover:underline">
+                    Politisk arbejde
+                  </li>
+                  <li class="cursor-pointer hover:underline pb-5">
+                    Internationalt arbejde
+                  </li>
+                  <li
+                    class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
+                  >
+                    Initiativer
+                  </li>
+                  <li class="cursor-pointer hover:underline">
+                    Kommuner og regioner
+                  </li>
+                  <li class="cursor-pointer hover:underline">Virksomheder</li>
+                  <li class="cursor-pointer hover:underline">Undervisning</li>
+                  <li class="cursor-pointer hover:underline pb-5">
+                    Projekt Plastfrit Hav
+                  </li>
+
+                  <li
+                    class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
+                  >
+                    Kampagne
+                  </li>
+                  <li class="cursor-pointer hover:underline">
+                    Global plastiktraktat nu
+                  </li>
+                  <li class="cursor-pointer hover:underline">
+                    Plastaffald ud af EU
+                  </li>
+                  <li class="cursor-pointer hover:underline">
+                    Producent Tjek 2024
+                  </li>
+                  <li class="cursor-pointer hover:underline">
+                    #SingleUseSucks
+                  </li>
+                  <li class="cursor-pointer hover:underline">
+                    Mission Mikroplast
+                  </li>
+                  <li class="cursor-pointer hover:underline">Plastic People</li>
+                </ul>
+              </li>
+            </div>
+
+            <div x-data="{ showSubmenu: false }">
+              <li class="text-white pl-8 py-4 decoration-solid relative">
+                <ul
+                  class="flex items-center cursor-pointer hover:underline"
+                  x-on:click="showSubmenu = !showSubmenu; toggleImage(); $event.stopPropagation()"
+                >
+                  Hvad kan du gøre?
+                  <Image src={ArrowUp} alt="ArrowUp" class="ml-1 w-2 img" />
+                </ul>
+
+                <ul x-show="showSubmenu" class="relative py-3">
+                  <li
+                    class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
+                  >
+                    Vær med i bevægelsen
+                  </li>
+                  <li class="cursor-pointer hover:underline">Støt nu</li>
+                  <li class="cursor-pointer hover:underline">Bliv medlem</li>
+                  <li class="cursor-pointer hover:underline">
+                    World Cleanup Day
+                  </li>
+                  <li class="cursor-pointer hover:underline">
+                    Arv og testamente
+                  </li>
+                  <li class="cursor-pointer hover:underline pb-5">
+                    Er du en Plastic Changer?
+                  </li>
+
+                  <li
+                    class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
+                  >
+                    For virksomheder
+                  </li>
+                  <li class="cursor-pointer hover:underline">Workshops</li>
+                  <li class="cursor-pointer hover:underline">
+                    Støt som virksomhed
+                  </li>
+                  <li class="cursor-pointer hover:underline">
+                    Innovationspartner
+                  </li>
+                  <li class="cursor-pointer hover:underline pb-5">Foredrag</li>
+
+                  <li
+                    class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
+                  >
+                    Hold dig opdateret
+                  </li>
+                  <li class="cursor-pointer hover:underline">Nyhedsbrev</li>
+                  <li class="cursor-pointer hover:underline">Gode råd</li>
+                  <li class="cursor-pointer hover:underline">Events</li>
+                </ul>
+              </li>
+            </div>
+
+            <div x-data="{ showSubmenu: false }">
+              <li class="text-[#f6f6f6] pl-8 py-4 decoration-solid relative">
+                <ul
+                  class="flex items-center cursor-pointer hover:underline"
+                  x-on:click="showSubmenu = !showSubmenu; toggleImage(); $event.stopPropagation()"
+                >
+                  Videnscenter
+                  <Image src={ArrowUp} alt="ArrowUp" class="ml-1 w-2 img" />
+                </ul>
+
+                <ul x-show="showSubmenu" class="relative py-3">
+                  <li
+                    class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
+                  >
+                    Få mere viden
+                  </li>
+                  <li class="cursor-pointer hover:underline pb-5">
+                    Videnscenter
+                  </li>
+
+                  <li
+                    class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
+                  >
+                    Overblik
+                  </li>
+                  <li class="cursor-pointer hover:underline pb-5">
+                    Udvalgte rapporter
+                  </li>
+
+                  <li
+                    class="uppercase py-1 text-xs cursor-pointer hover:underline text-[#B1C0D8]"
+                  >
+                    Få svar
+                  </li>
+                  <li class="cursor-pointer hover:underline pb-5">FAQ</li>
+                </ul>
+              </li>
+            </div>
+
+            <li
+              class="text-[#f6f6f6] pl-8 py-4 mb-80 hover:underline decoration-solid flex items-center"
+            >
+              <a
+                href="https://www.hjemhavn.dk/collections/plastic-change-merchandise"
+                class="flex items-center"
+              >
+                Merchandise
+              </a>
+            </li>
+            <span class="text-[#f6f6f6] text-xs">© 2024 Plastic Change</span>
+          </li>
+        </div>
+      </ul>
+    </nav>
+  </div>
 </div>
